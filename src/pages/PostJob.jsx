@@ -128,15 +128,23 @@ export default function PostJob() {
                     <label className="form-check-label">Fixed Price</label>
                   </div>
                 </div>
-                <div className="d-md-flex gap-2 mb-2">
-                  <select className="form-select w-auto">
+                <div class="d-md-flex gap-2 mb-2">
+                  <select class="form-select w-100 w-md-auto">
                     <option>Part Time</option>
                     <option>Full Time</option>
                     <option>Single</option>
                   </select>
-                  <input type="text" className="form-control w-auto" />
-                  <span className="pt-2">hrs/week for</span>
-                  <select className="form-select w-auto">
+
+                  <input
+                    type="text"
+                    class="form-control w-100 mt-md-0 mt-2 w-md-auto"
+                  />
+
+                  <span class="pt-2 d-block d-md-inline-block w-75">
+                    hrs/week for
+                  </span>
+
+                  <select class="form-select w-100 w-md-auto">
                     <option>1-2 weeks</option>
                     <option>3-4 weeks</option>
                     <option>1-3 months</option>
@@ -181,7 +189,7 @@ export default function PostJob() {
                       <div className="form-check form-check-inline">
                         <input className="form-check-input" type="checkbox" />
                         <label className="form-check-label">
-                          <small>No preference</small> 
+                          <small>No preference</small>
                         </label>
                       </div>
                       <div className="form-check form-check-inline">
@@ -293,7 +301,7 @@ export default function PostJob() {
               <p className="fw-medium">
                 Your project will be reviewed by staff before it goes live.
               </p>
-              <button type="button" className="btn btn-primary fw-medium">
+              <button type="button" className="btn btn-primary fw-medium mb-3 mb-md-0">
                 POST JOB NOW
               </button>
             </form>

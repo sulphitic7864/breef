@@ -181,13 +181,13 @@ export default function PostJob() {
                       <div className="form-check form-check-inline">
                         <input className="form-check-input" type="checkbox" />
                         <label className="form-check-label">
-                          No preference
+                          <small>No preference</small> 
                         </label>
                       </div>
                       <div className="form-check form-check-inline">
                         <input className="form-check-input" type="checkbox" />
                         <label className="form-check-label">
-                          Preferred location
+                          <small>Preferred location</small>
                         </label>
                       </div>
                     </div>
@@ -215,12 +215,14 @@ export default function PostJob() {
                           name="start-date"
                           className="text-sm"
                         />{" "}
-                        Public—Visible Start immediately after proposal is
-                        selected.
+                        <small>
+                          Public—Visible Start immediately after proposal is
+                          selected.
+                        </small>
                       </div>
                       <div>
-                        <input type="radio" name="start-date" /> Job will start
-                        on
+                        <input type="radio" name="start-date" />
+                        <small> will start on</small>
                       </div>
                     </div>
 
@@ -234,30 +236,44 @@ export default function PostJob() {
                           name="visibility"
                           className="text-sm"
                         />{" "}
-                        Public—Visible to everyone in the Topcreative community.
+                        <small>
+                          Public—Visible to everyone in the Topcreative
+                          community.
+                        </small>
                       </div>
                       <div>
-                        <input type="radio" name="visibility" /> Featured - You
-                        can list your project as featured to ensure more
-                        visibility and attract more bidders ($10.00)
+                        <input type="radio" name="visibility" />{" "}
+                        <small>
+                          Featured - You can list your project as featured to
+                          ensure more visibility and attract more bidders
+                          ($10.00)
+                        </small>
                       </div>
                       <div>
-                        <input type="radio" name="visibility" /> Private - You
-                        can click this if confidentiality is important and if
-                        you don't prefer your project to appear on search
-                        engines and avoid viewing by unlogged users ($30.00)
+                        <input type="radio" name="visibility" />{" "}
+                        <small>
+                          Private - You can click this if confidentiality is
+                          important and if you don't prefer your project to
+                          appear on search engines and avoid viewing by unlogged
+                          users ($30.00)
+                        </small>
                       </div>
                       <div>
-                        <input type="radio" name="visibility" /> Blind - By
-                        clicking this, you can avoid bidders from viewing other
-                        biddings ($50.00)
+                        <input type="radio" name="visibility" />{" "}
+                        <small>
+                          Blind - By clicking this, you can avoid bidders from
+                          viewing other biddings ($50.00)
+                        </small>
                       </div>
                       <div>
-                        <input type="radio" name="visibility" /> NDA - To avoid
-                        contractors from discussing and sharing your project
-                        other than in private messages and keep your files
-                        confidential, you can ask contractors to agree signing a
-                        Non Disclosure Agreement digitally ($30.00)
+                        <input type="radio" name="visibility" />{" "}
+                        <small>
+                          NDA - To avoid contractors from discussing and sharing
+                          your project other than in private messages and keep
+                          your files confidential, you can ask contractors to
+                          agree signing a Non Disclosure Agreement digitally
+                          ($30.00)
+                        </small>
                       </div>
                     </div>
                   </div>

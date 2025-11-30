@@ -180,3 +180,58 @@
 .lang-dropdown:hover .lang-menu {
   display: block;
 }
+
+
+/* =============== MOBILE RESPONSIVE NAVBAR =============== */
+@media (max-width: 900px) {
+  .nav-bar {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 10px 0;
+  }
+
+  /* Show hamburger */
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
+
+  /* Center part (menu) becomes vertical */
+  .main-menu {
+    flex-direction: column;
+    width: 100%;
+    background: #3a3a3a;
+    margin: 0;
+    border-top: 1px solid #333;
+    display: none; /* hidden by default */
+  }
+
+  .main-menu.show {
+    display: flex; /* open on toggle */
+  }
+
+  .menu-item {
+    width: 100%;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #333;
+    padding: 12px 20px;
+    height: auto;
+  }
+
+  .menu-item a {
+    font-size: 14px;
+  }
+
+  /* Right side moves below logo */
+  .nav-right {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+
+  /* Language dropdown adjusts */
+  .lang-btn {
+    padding: 6px 12px;
+  }
+}

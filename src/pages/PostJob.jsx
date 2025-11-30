@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import SubNavbar from "../components/SubNavbar";
-import profile7 from "../assets/images/profile-img-7.jpg"
-import profile8 from "../assets/images/profile-img-8.jpg"
-import profile9 from "../assets/images/profile-img-9.jpg"
+import profile7 from "../assets/images/profile-img-7.jpg";
+import profile8 from "../assets/images/profile-img-8.jpg";
+import profile9 from "../assets/images/profile-img-9.jpg";
 
 const featuredFreelancers = [
   {
@@ -10,21 +10,21 @@ const featuredFreelancers = [
     country: "United States",
     description:
       "Have an email template 90% designed in GO DADDY email marketing program but there are some minor changes I need done.",
-    img: {profile7},
+    img: profile7,
   },
   {
     name: "Chirs Chella",
     country: "United States",
     description:
       "Have an email template 90% designed in GO DADDY email marketing program but there are some minor changes I need done.",
-    img: {profile8},
+    img: profile8,
   },
   {
     name: "Lee Thomas",
     country: "United States",
     description:
       "Have an email template 90% designed in GO DADDY email marketing program but there are some minor changes I need done.",
-    img: {profile9},
+    img: profile9,
   },
 ];
 
@@ -58,15 +58,17 @@ export default function PostJob() {
               </div>
 
               <div className="mb-3">
-                <label className="form-label fw-semibold">
-                  What work do you require?
-                </label>
+                <div className="d-flex justify-content-between">
+                  <label className="form-label fw-semibold">
+                    What work do you require?
+                  </label>
+                  <small className="form-text text-primary ms-auto">
+                    Need help? Browse our Job Templates.
+                  </small>
+                </div>
                 <select className="form-select">
                   <option>Select a category of work (optional)</option>
                 </select>
-                <small className="form-text text-muted">
-                  Need help? Browse our Job Templates.
-                </small>
               </div>
 
               <div className="mb-3">
@@ -89,17 +91,17 @@ export default function PostJob() {
 
               {/* File Uploads */}
               <div className="mb-3">
-                <label className="form-label fw-bold">Add Files</label>
+                <label className="form-label fw-medium">Add Files</label>
                 <div className="mb-2">
                   {files.map((file, idx) => (
                     <div
                       key={idx}
-                      className="alert alert-warning d-inline-block me-2 p-2"
+                      className="alert alert-white border d-inline-block me-2 p-2"
                     >
                       {file.name}
                       <button
                         type="button"
-                        className="btn-close ms-2"
+                        className="btn-close text-primary ms-2"
                         onClick={() => removeFile(idx)}
                       ></button>
                     </div>
@@ -115,7 +117,7 @@ export default function PostJob() {
 
               {/* Project Type */}
               <div className="mb-3">
-                <label className="form-label fw-bold">Project Type</label>
+                <label className="form-label fw-medium">Project Type</label>
                 <div className="mb-2">
                   <div className="form-check form-check-inline">
                     <input className="form-check-input" type="checkbox" />
@@ -146,7 +148,7 @@ export default function PostJob() {
 
               {/* Budget */}
               <div className="mb-3">
-                <label className="form-label fw-bold">Budget</label>
+                <label className="form-label fw-medium">Budget</label>
                 <div className="d-flex gap-2">
                   <select className="form-select w-auto">
                     <option>USD</option>
@@ -159,17 +161,23 @@ export default function PostJob() {
 
               {/* Privacy and Other Options */}
               <div className="mb-3">
+                <label className="form-label fw-medium">
+                  Privacy and Other Options
+                </label>
+                <br />
                 <button
                   type="button"
-                  className="btn btn-link p-0"
+                  className="btn btn-primary"
                   onClick={() => setShowPrivacy(!showPrivacy)}
                 >
-                  {showPrivacy ? "Hide" : "Show"} Privacy and Other Options
+                  {showPrivacy ? "Hide" : "Show"}
                 </button>
                 {showPrivacy && (
                   <div className="border p-3 mt-2 bg-light">
+                    <label className="form-label fw-semibold mb-1">
+                      Job Location
+                    </label>
                     <div className="mb-2">
-                      <label className="form-label fw-bold">Job Location</label>
                       <div className="form-check form-check-inline">
                         <input className="form-check-input" type="checkbox" />
                         <label className="form-check-label">
@@ -184,8 +192,8 @@ export default function PostJob() {
                       </div>
                     </div>
 
-                    <div className="mb-2">
-                      <label className="form-label fw-bold">
+                    <div className="mb-3">
+                      <label className="form-label fw-semibold mb-1">
                         Post This Job For
                       </label>
                       <select className="form-select w-auto">
@@ -197,13 +205,36 @@ export default function PostJob() {
                       </select>
                     </div>
 
+                    <div className="mb-3">
+                      <label className="form-label fw-semibold mb-1">
+                        Proposed Start Date
+                      </label>
+                      <div>
+                        <input
+                          type="radio"
+                          name="start-date"
+                          className="text-sm"
+                        />{" "}
+                        Public—Visible Start immediately after proposal is
+                        selected.
+                      </div>
+                      <div>
+                        <input type="radio" name="start-date" /> Job will start
+                        on
+                      </div>
+                    </div>
+
                     <div className="mb-2">
-                      <label className="form-label fw-bold">
+                      <label className="form-label fw-semibold mb-1">
                         Job Posting Visibility
                       </label>
                       <div>
-                        <input type="radio" name="visibility" /> Public—Visible
-                        to everyone in the Topcreative community.
+                        <input
+                          type="radio"
+                          name="visibility"
+                          className="text-sm"
+                        />{" "}
+                        Public—Visible to everyone in the Topcreative community.
                       </div>
                       <div>
                         <input type="radio" name="visibility" /> Featured - You
@@ -233,18 +264,20 @@ export default function PostJob() {
                 )}
               </div>
 
-              <p>
+              <p className="mb-1">
                 By clicking ‘Post Job Now’, you agree to the
-                <a href="#" className="text-success">
+                <a href="#" className="text-secondary px-1">
                   Terms & Conditions
                 </a>
                 and
-                <a href="#" className="text-success">
+                <a href="#" className="text-secondary px-1">
                   Privacy Policy
                 </a>
-                .
               </p>
-              <button type="button" className="btn btn-primary">
+              <p className="fw-medium">
+                Your project will be reviewed by staff before it goes live.
+              </p>
+              <button type="button" className="btn btn-primary fw-medium">
                 POST JOB NOW
               </button>
             </form>
@@ -252,18 +285,34 @@ export default function PostJob() {
 
           {/* Right Column - Featured Freelancers */}
           <div className="col-md-4">
-            <div className="border p-3">
-              <h5 className="text-warning mb-2">
+            <div className="border p-2">
+              <h5 className="text-primary">
                 <span className="fw-bold">FEATURED</span> FREELANCERS
               </h5>
               <hr />
               {featuredFreelancers.map((f, i) => (
-                <div key={i} className="d-flex py-2 border-bottom">
-                  <img src={profile7} alt="profile" className="me-2" width={50} height={50} />
-                  <div>
-                    <small className="">{f.name}</small>
-                    <small className="text-muted d-inline-block ms-5">{f.country}</small>
-                    <small className="d-block">{f.description}</small>
+                <div
+                  key={i}
+                  className="d-flex py-2 border-bottom align-items-start"
+                >
+                  <img
+                    src={`${f.img}`}
+                    alt="profile"
+                    className="me-2"
+                    width={50}
+                    height={50}
+                    style={{ borderRadius: "4px" }}
+                  />
+
+                  <div className="flex-grow-1">
+                    {/* Name + Country in same row */}
+                    <div className="d-flex justify-content-between">
+                      <small className="fw-bold">{f.name}</small>
+                      <small className="text-muted">{f.country}</small>
+                    </div>
+
+                    {/* Description */}
+                    <small className="d-block mt-1">{f.description}</small>
                   </div>
                 </div>
               ))}

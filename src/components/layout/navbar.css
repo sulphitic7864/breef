@@ -78,12 +78,24 @@
   left: 0;
 }
 
-.color-blue::before { background: #29B3BF; }
-.color-orange::before { background: #F0705B ; }
-.color-yellow::before { background: #F4D561; }
-.color-green::before { background: #a7bc12 ; }
-.color-cyan::before { background: #66a6ae; }
-.color-magenta::before { background: #8a008a ; }
+.color-blue::before {
+  background: #29b3bf;
+}
+.color-orange::before {
+  background: #f0705b;
+}
+.color-yellow::before {
+  background: #f4d561;
+}
+.color-green::before {
+  background: #a7bc12;
+}
+.color-cyan::before {
+  background: #66a6ae;
+}
+.color-magenta::before {
+  background: #8a008a;
+}
 
 /* HOVER: FILL BACKGROUND WITH SAME COLOR */
 .menu-item:hover {
@@ -91,22 +103,34 @@
 }
 
 .color-blue:hover,
-.color-blue.active { background: #29B3BF; }
+.color-blue.active {
+  background: #29b3bf;
+}
 
 .color-orange:hover,
-.color-orange.active { background: #F0705B ; }
+.color-orange.active {
+  background: #f0705b;
+}
 
 .color-yellow:hover,
-.color-yellow.active { background: #F4D561; }
+.color-yellow.active {
+  background: #f4d561;
+}
 
 .color-green:hover,
-.color-green.active { background: #a7bc12 ; }
+.color-green.active {
+  background: #a7bc12;
+}
 
 .color-cyan:hover,
-.color-cyan.active { background: #66a6ae; }
+.color-cyan.active {
+  background: #66a6ae;
+}
 
 .color-magenta:hover,
-.color-magenta.active { background: #8a008a ; }
+.color-magenta.active {
+  background: #8a008a;
+}
 
 /* RIGHT SIDE */
 .nav-right {
@@ -181,13 +205,15 @@
   display: block;
 }
 
-
 /* =============== MOBILE RESPONSIVE NAVBAR =============== */
 @media (max-width: 900px) {
   .nav-bar {
     height: auto;
-    flex-wrap: wrap;
-    padding: 10px 0;
+    padding: 5px 0;
+  }
+
+  .brand-logo img {
+    display: none;
   }
 
   /* Show hamburger */
@@ -227,7 +253,6 @@
   .nav-right {
     width: 100%;
     justify-content: flex-end;
-    margin-top: 10px;
   }
 
   /* Language dropdown adjusts */

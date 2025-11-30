@@ -107,3 +107,7 @@ body {
 .btn {
   border-radius: 0% !important;
 }
+
+.navbar-nav {
+    flex-direction: row !important;
+  }

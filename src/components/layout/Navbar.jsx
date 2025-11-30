@@ -15,7 +15,7 @@ export default function Navbar() {
     <div className="nav-bar-wrapper">
       <div className="nav-inner">
 
-        <nav className="nav-bar">
+        <nav className={`nav-bar ${open ? "menu-open" : ""}`}>
 
           <div className="nav-left">
             <button className="menu-toggle" onClick={() => setOpen(!open)}>

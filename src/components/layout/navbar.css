@@ -209,8 +209,14 @@
 @media (max-width: 900px) {
   .nav-bar {
     height: auto;
-    padding: 5px 0;
+    flex-wrap: nowrap;
+    padding: 10px 0;
   }
+
+  .nav-bar.menu-open {
+  flex-wrap: wrap;
+  height: auto;
+}
 
   .brand-logo img {
     display: none;

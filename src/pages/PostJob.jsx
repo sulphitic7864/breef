@@ -128,7 +128,7 @@ export default function PostJob() {
                     <label className="form-check-label">Fixed Price</label>
                   </div>
                 </div>
-                <div className="d-flex gap-2 mb-2">
+                <div className="d-md-flex gap-2 mb-2">
                   <select className="form-select w-auto">
                     <option>Part Time</option>
                     <option>Full Time</option>

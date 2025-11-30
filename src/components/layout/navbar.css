@@ -1,0 +1,182 @@
+/* Gray background wrapper with spacing on both sides */
+.nav-bar-wrapper {
+  width: 100%;
+  background: #4a4a4a;
+  border-top: 3px solid black;
+}
+
+.nav-inner {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 25px; /* space on left + right like screenshot */
+}
+
+/* NAV BAR ROW */
+.nav-bar {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Logo + toggle */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand-logo img {
+  height: 22px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+}
+
+/* CENTER MENU */
+.main-menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0 40px; /* pushes icons to right side */
+  gap: 0;
+}
+
+.menu-item {
+  padding: 0 20px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-left: 1px solid #333;
+}
+
+.menu-item:last-child {
+  border-right: 1px solid #333;
+}
+
+.menu-item a {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+/* COLOR STRIP ON TOP */
+.menu-item::before {
+  content: "";
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.color-blue::before { background: #29B3BF; }
+.color-orange::before { background: #F0705B ; }
+.color-yellow::before { background: #F4D561; }
+.color-green::before { background: #a7bc12 ; }
+.color-cyan::before { background: #66a6ae; }
+.color-magenta::before { background: #8a008a ; }
+
+/* HOVER: FILL BACKGROUND WITH SAME COLOR */
+.menu-item:hover {
+  background: var(--hover-color);
+}
+
+.color-blue:hover,
+.color-blue.active { background: #29B3BF; }
+
+.color-orange:hover,
+.color-orange.active { background: #F0705B ; }
+
+.color-yellow:hover,
+.color-yellow.active { background: #F4D561; }
+
+.color-green:hover,
+.color-green.active { background: #a7bc12 ; }
+
+.color-cyan:hover,
+.color-cyan.active { background: #66a6ae; }
+
+.color-magenta:hover,
+.color-magenta.active { background: #8a008a ; }
+
+/* RIGHT SIDE */
+.nav-right {
+  margin-left: auto; /* pushes right section fully right */
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+/* Chat icon with badge */
+.icon-wrapper {
+  position: relative;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.icon-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: red;
+  color: white;
+  font-size: 10px;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-icon {
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Language menu */
+.lang-dropdown {
+  position: relative;
+}
+
+.lang-btn {
+  background: #808080;
+  border: none;
+  padding: 8px 15px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.lang-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  background: #555;
+  width: 70px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 9;
+}
+
+.lang-menu li {
+  padding: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.lang-dropdown:hover .lang-menu {
+  display: block;
+}

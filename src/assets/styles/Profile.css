@@ -1,0 +1,406 @@
+/* Login Info */
+.login-info {
+  font-size: 0.9rem;
+}
+
+.login-info a {
+  color: #666;
+  text-decoration: none;
+}
+
+.login-info a:hover {
+  color: #333;
+}
+
+.account-dropdown {
+  background: none;
+  border: none;
+  color: #666;
+  padding: 0;
+}
+
+.account-dropdown:hover {
+  color: #333;
+}
+
+.account-dropdown .caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px solid;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+
+/* Dotted Border */
+.dotted-border {
+  border-top: 2px dotted #ddd;
+  margin: 10px 0;
+}
+
+.profile-image-card {
+  border-radius: 0;
+}
+
+.sidebar-menu {
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.sidebar-menu .list-group-item {
+  color: #727272;
+  border-bottom: 1.5px solid #eee;
+  transition: all 0.3s ease;
+  font-size: 12px;
+  padding: 10px 16px;
+
+}
+
+.sidebar-menu .list-group-item:last-child {
+  border-bottom: none;
+}
+
+.list-group-item.active{
+    background: #e7e7e6 !important;
+    font-weight: bold;
+    border: none;
+    border-radius: none !important;
+}
+
+.sidebar-menu .list-group-item a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.sidebar-menu .list-group-item.active a {
+color: #727272 !important;}
+
+.sidebar-menu .list-group-item:hover:not(.active) a {
+  text-decoration: underline;
+  transition: all .5s;
+}
+
+/* Company Header */
+.company-name {
+  color: #333;
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.verified-badge {
+  color: #fff;
+  background-color: #28a745;
+  padding: 2px 5px;
+  font-size: 0.6em;
+  border-radius: 50%;
+}
+
+.tagline {
+  color: #666;
+  font-weight: 500;
+}
+
+.contact-icons {
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.icon {
+  cursor: pointer;
+  font-size: 1.2rem;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.icon:hover {
+  opacity: 1;
+}
+
+.watch-list span {
+  cursor: pointer;
+}
+
+/* Gauges */
+.gauges-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.gauge-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.gauge-wrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.gauge-svg {
+  transform: rotate(-90deg);
+}
+
+.gauge-background {
+  stroke: #f0f0f0;
+  fill: none;
+}
+
+.gauge-progress {
+  fill: none;
+  transition: stroke-dashoffset 1s ease-in-out;
+}
+
+.gauge-value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.value-int {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.value-dec {
+  font-size: 1rem;
+  color: #666;
+}
+
+.gauge-label {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.color-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Contact Card */
+.contact-card {
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.contact-header {
+  background-color: #ffc107;
+  color: #333;
+  text-align: center;
+}
+
+.contact-card table {
+  margin-bottom: 0;
+}
+
+.contact-card td {
+  vertical-align: middle;
+}
+
+.verifications-cell {
+  background-color: #f8f9fa;
+  padding: 15px !important;
+}
+
+.verification-placeholder {
+  background-color: #eee;
+  padding: 10px;
+  border-radius: 4px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.download-widget {
+  background-color: #f56d58;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+/* Tables */
+.table-bordered {
+  border: 1px solid #dee2e6 !important;
+}
+
+.table-bordered td {
+  border: 1px solid #dee2e6;
+}
+
+/* Level Badge */
+.level-badge {
+  background-color: #6ba256f2;
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+/* Team Members */
+.team-member-cell {
+  background-color: #f8f9fa;
+  padding: 10px !important;
+}
+
+.team-member-img {
+  width: 60px;
+  height: 60px;
+}
+
+.img-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+/* Job Sections */
+.job-stats, .job-stats-mobile {
+  background-color: #f3eaca;
+}
+
+.job-filters {
+  background-color: #ececeb;
+}
+
+.sort-button {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+  display: inline-block;
+}
+
+.sort-button:hover {
+  background-color: #f0f0f0;
+  color: #333;
+  text-decoration: none;
+}
+
+.job-item {
+  padding: 10px 0;
+}
+
+.stars {
+  color: #ccc;
+  letter-spacing: 2px;
+}
+
+/* Portfolio */
+.portfolio-carousel {
+  border-radius: 4px;
+}
+
+.portfolio-item {
+  text-align: center;
+}
+
+.portfolio-img-placeholder {
+  width: 100%;
+  height: 150px;
+  background-color: #eee;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+/* Certifications & Education */
+.cert-item, .edu-item {
+  padding: 0;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+.btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+/* Text Colors */
+.text-success {
+  color: #28a745 !important;
+}
+
+.text-warning {
+  color: #ffc107 !important;
+}
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-container {
+    padding-top: 10px;
+  }
+  
+  .login-info {
+    font-size: 0.8rem;
+  }
+  
+  .gauges-grid .col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  
+  .portfolio-img-placeholder {
+    height: 120px;
+  }
+}
+
+@media (max-width: 576px) {
+  .gauges-grid .col-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .portfolio-img-placeholder {
+    height: 100px;
+  }
+}

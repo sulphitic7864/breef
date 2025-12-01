@@ -83,6 +83,10 @@ body {
   flex-direction: column;
 }
 
+:root .table{
+  background-color: #f6f6f5 !important;
+} 
+
 :root .form-control:focus, 
 :root .form-select:focus {
     color: var(--bs-body-color);

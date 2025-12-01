@@ -1,1544 +1,453 @@
-import React from "react";
+// Home.jsx
+import React, { useEffect, useState } from "react";
+import "../assets/styles/Home.css";
+
 import banner1 from "../assets/images/home/banner1.jpg";
 import banner2 from "../assets/images/home/banner2.jpg";
+import banner3 from "../assets/images/home/banner1.jpg";
+import fb1 from "../assets/images/home/facebook_icon01.jpg";
+import twitter1 from "../assets/images/home/twitter_icon01.jpg";
+import google1 from "../assets/images/home/google_Icon01.jpg";
+import fb2 from "../assets/images/sicon-bg5b.jpg";
+import twitter2 from "../assets/images/sicon-bg4b.jpg";
+import google2 from "../assets/images/sicon-bg3b.jpg";
+import fb3 from "../assets/images/sicon-bg5b2.jpg";
+import twitter3 from "../assets/images/sicon-bg4b2.jpg";
+import google3 from "../assets/images/sicon-bg3b2.jpg";
 
-function Home() {
+import c1 from "../assets/images/home/img-5a.jpg";
+import c2 from "../assets/images/home/img-6a.jpg";
+import c3 from "../assets/images/home/img-7a.jpg";
+import c4 from "../assets/images/home/img-8a.jpg";
+import c5 from "../assets/images/home/img-9a.jpg";
+import c6 from "../assets/images/home/img-10a.jpg";
+import c7 from "../assets/images/home/img-11a.jpg";
+import c8 from "../assets/images/home/img-12a.jpg";
+
+import twitImg from "../assets/images/home/img-24.jpg";
+
+import f1 from "../assets/images/home/img-1.jpg";
+import f2 from "../assets/images/home/img-2.jpg";
+import f3 from "../assets/images/home/img-3.jpg";
+import f4 from "../assets/images/home/img-4.jpg";
+import f5 from "../assets/images/home/img-4.jpg";
+import f6 from "../assets/images/home/img-2.jpg";
+import f7 from "../assets/images/home/img-1.jpg";
+import f8 from "../assets/images/home/img-3.jpg";
+
+const twitsData = [
+  {
+    img: twitImg,
+    handle: "@topcreative",
+    text:
+      "New design trends are emerging quickly! Discover what’s hot in digital creativity this week.",
+    time: "10 minutes ago",
+  },
+  {
+    img: twitImg,
+    handle: "@DesignMasters",
+    text:
+      "Typography matters. A simple font change can bring a brand to life. Always explore your options!",
+    time: "25 minutes ago",
+  },
+  {
+    img: twitImg,
+    handle: "@FreelanceHub",
+    text:
+      "Pro tip: Clear job descriptions attract better freelancers. Be specific and save time.",
+    time: "1 hour ago",
+  },
+  {
+    img: twitImg,
+    handle: "@CreativeUpdates",
+    text:
+      "We just launched a new batch of featured contractors! Find top talent for your next project.",
+    time: "2 hours ago",
+  },
+  {
+    img: twitImg,
+    handle: "@ArtStudioLive",
+    text:
+      "Color palette inspiration: Deep blues + soft orange accents. Perfect for modern UI designs.",
+    time: "3 hours ago",
+  },
+  {
+    img: twitImg,
+    handle: "@DailyGraphics",
+    text:
+      "Consistency = trust. Make sure your branding looks the same across all platforms.",
+    time: "Yesterday",
+  },
+];
+
+
+const TopCarousel = ({
+  slides = [banner1, banner2, banner3],
+  interval = 4500,
+}) => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const t = setInterval(
+      () => setIndex((i) => (i + 1) % slides.length),
+      interval
+    );
+    return () => clearInterval(t);
+  }, [slides.length, interval]);
+
   return (
-    <>
-      <div className="container">
-        <div className="row">
-          <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-            {/* Bootstrap Carousel */}
-            <div
-              id="carousel-example-captions"
-              className="carousel slide"
-              data-ride="carousel"
-            >
-              {/* Carousel Indicators */}
-              <ol className="carousel-indicators">
-                <li
-                  data-target="#carousel-example-captions"
-                  data-slide-to="0"
-                  className="active"
-                ></li>
-                <li
-                  data-target="#carousel-example-captions"
-                  data-slide-to="1"
-                ></li>
-                <li
-                  data-target="#carousel-example-captions"
-                  data-slide-to="2"
-                ></li>
-              </ol>
-
-              {/* Carousel Items */}
-              <div className="carousel-inner">
-                <div className="item active">
-                  <img
-                    src={banner1}
-                    alt="Banner 1"
-                    className="img-responsive center-block"
-                  />
-                  <div className="carousel-caption">
-                    {/* Optional captions can go here */}
-                  </div>
-                </div>
-
-                <div className="item">
-                  <img
-                    src={banner2}
-                    alt="Banner 2"
-                    className="img-responsive center-block"
-                  />
-                  <div className="carousel-caption">
-                    {/* Optional captions can go here */}
-                  </div>
-                </div>
-
-                <div className="item">
-                  <img
-                    src={banner1}
-                    alt="Banner 3"
-                    className="img-responsive center-block"
-                  />
-                  <div className="carousel-caption">
-                    {/* Optional captions can go here */}
-                  </div>
-                </div>
-              </div>
-
-              {/* Carousel Controls */}
-              <a
-                className="left carousel-control"
-                href="#carousel-example-captions"
-                data-slide="prev"
-              >
-                <span className="glyphicon glyphicon-chevron-left"></span>
-                <span className="sr-only">Previous</span>
-              </a>
-              <a
-                className="right carousel-control"
-                href="#carousel-example-captions"
-                data-slide="next"
-              >
-                <span className="glyphicon glyphicon-chevron-right"></span>
-                <span className="sr-only">Next</span>
-              </a>
-            </div>
-
-            {/* Search Box Section */}
-            <div className="whiteBox">
-              <div className="col-xs-12 col-sm-5 col-md-5 col-lg-5">
-                <input
-                  type="text"
-                  className="form-control border0px whiteBoxBorder"
-                  style={{ height: "40px" }}
-                  placeholder="Enter Keyword"
-                />
-              </div>
-              <div className="col-xs-12 col-sm-7 col-md-7 col-lg-7 whiteboxItemCol">
-                <div className="whiteBoxItem2">
-                  <div className="whiteBoxItem1a">
-                    <img
-                      src="images/home/search-img-0b.png"
-                      width="17"
-                      height="40"
-                      alt="Search icon 0"
-                    />
-                  </div>
-                  <div className="whiteBoxItem1">
-                    <img
-                      src="images/home/search-img-1b.png"
-                      width="33"
-                      height="40"
-                      alt="Search icon 1"
-                    />
-                  </div>
-                  <div className="whiteBoxItem1">
-                    <img
-                      src="images/home/search-img-2b.png"
-                      width="32"
-                      height="40"
-                      alt="Search icon 2"
-                    />
-                  </div>
-                  <div className="whiteBoxItem1">
-                    <img
-                      src="images/home/search-img-3b.png"
-                      width="26"
-                      height="40"
-                      alt="Search icon 3"
-                    />
-                  </div>
-                  <div className="whiteBoxItem1">
-                    <img
-                      src="images/home/search-img-4b.png"
-                      width="31"
-                      height="40"
-                      alt="Search icon 4"
-                    />
-                  </div>
-                  <div className="whiteBoxItem1">
-                    <img
-                      src="images/home/search-img-5b.png"
-                      width="30"
-                      height="40"
-                      alt="Search icon 5"
-                    />
-                  </div>
-                  <div className="whiteBoxItem1">
-                    <img
-                      src="images/home/search-img-6b.png"
-                      width="30"
-                      height="40"
-                      alt="Search icon 6"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+    <div className="top-carousel">
+      <div className="carousel-slides">
+        {slides.map((s, i) => (
+          <div key={i} className={`slide ${i === index ? "active" : ""}`}>
+            <img src={s} alt={`slide-${i}`} />
           </div>
-
-          {/* Right Column - Sign In Section */}
-          <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 padding-top-20px">
-            <img
-              alt="Sign in"
-              src="images/home/signin.png"
-              className="img-responsive"
-            />
-            <div className="dotted-border width"></div>
-
-            <form role="form">
-              <div className="form-group has-success has-feedback margin-bottom-10px margin-top-10px">
-                <input
-                  type="text"
-                  id="inputSuccess2"
-                  className="form-control"
-                  placeholder="Username"
-                />
-                <span className="username form-control-feedback"></span>
-              </div>
-              <div className="form-group has-success has-feedback">
-                <input
-                  type="password"
-                  id="inputWarning2"
-                  className="form-control"
-                  placeholder="Password"
-                />
-                <span className="password form-control-feedback"></span>
-              </div>
-              <button
-                type="button"
-                className="btn btn-primary font-2 pull-right width"
-              >
-                SIGN IN
-              </button>
-            </form>
-
-            <img
-              alt="Or"
-              src="images/home/green-or.png"
-              className="center-block img-responsive"
-            />
-
-            <div className="Icons margin-top-10px">
-              <a href="#" className="a-btn2">
-                <img
-                  src="images/facebook_icon01.jpg"
-                  width="30"
-                  height="30"
-                  alt="Facebook"
-                />
-                <span className="a-btn2-slide-text6"></span>
-              </a>
-            </div>
-            <div className="Icons margin-top-10px">
-              <a href="#" className="a-btn2">
-                <img
-                  src="images/twitter_icon01.jpg"
-                  width="30"
-                  height="30"
-                  alt="Twitter"
-                />
-                <span className="a-btn2-slide-text7"></span>
-              </a>
-            </div>
-            <div className="Icons margin-top-10px">
-              <a href="#" className="a-btn2">
-                <img
-                  src="images/google_Icon01.jpg"
-                  width="30"
-                  height="30"
-                  alt="Google"
-                />
-                <span className="a-btn2-slide-text8"></span>
-              </a>
-            </div>
-
-            <div className="createAcc">
-              <img
-                alt="Create account"
-                src="images/home/create-an-account.png"
-                className="img-responsive"
-              />
-            </div>
-            <div className="dotted-border width"></div>
-
-            <label className="checkbox-inline padding-top-10px">
-              <input type="checkbox" id="inlineCheckbox1" value="option1" />
-              <small className="font-2 dark-grey-color">
-                I WANT TO POST JOB
-              </small>
-            </label>
-            <label className="checkbox-inline">
-              <input type="checkbox" id="inlineCheckbox2" value="option2" />
-              <small className="font-2 dark-grey-color">
-                I WANT TO FIND JOB
-              </small>
-            </label>
-
-            <img
-              alt="Or"
-              src="images/home/orange-or.png"
-              className="img-responsive center-block"
-            />
-
-            <div className="Icons margin-top-12px">
-              <a href="#" className="a-btn2">
-                <img
-                  src="images/facebook_icon01.jpg"
-                  width="30"
-                  height="30"
-                  alt="Facebook"
-                />
-                <span className="a-btn2-slide-text9"></span>
-              </a>
-            </div>
-            <div className="Icons margin-top-12px">
-              <a href="#" className="a-btn2">
-                <img
-                  src="images/twitter_icon01.jpg"
-                  width="30"
-                  height="30"
-                  alt="Twitter"
-                />
-                <span className="a-btn2-slide-text10"></span>
-              </a>
-            </div>
-            <div className="Icons margin-top-12px">
-              <a href="#" className="a-btn2">
-                <img
-                  src="images/google_Icon01.jpg"
-                  width="30"
-                  height="30"
-                  alt="Google"
-                />
-                <span className="a-btn2-slide-text11"></span>
-              </a>
-            </div>
-          </div>
-        </div>
-        {/* <div className="row">
-          <div className="col-md-8 col-sm-8 col-xs-12">
-            <div className="row margin-top-15px">
-              <div className="col-md-12 col-sm-12 col-xs-12">
-                <div className="row ">
-                  <div className="col-md-6 col-sm-6 col-xs-12 margin-bottom-15px">
-                    <div className="row">
-                      <div className="col-md-6 col-sm-6 col-xs-8">
-                        <a href="#">
-                          <img
-                            alt=""
-                            src="images/home/home-contractors.png "
-                            className="img-responsive"
-                          />
-                        </a>
-                      </div>
-                      <div className="col-md-6 col-sm-6 col-xs-4">
-                        <a href="#" className="pull-right">
-                          <img
-                            alt=""
-                            src="images/home/category-btn.png"
-                            className="img-responsive"
-                          />
-                        </a>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-md-12 col-sm-12 col-xs-12">
-                        <div className="dotted-border width"></div>
-                      </div>
-                    </div>
-                    <div className="row margin-top-15px">
-                      <div className="col-md-12 col-sm-12 col-xs-12">
-                        <div className="popover-markup">
-                          <div className="TopContractor">
-                            <div className="contractorinfo">
-                              
-                              <sup>
-                                <img
-                                  className="imgHoverable"
-                                  alt=""
-                                  src="images/home/img-5a.jpg"
-                                />
-                              </sup>
-                              <span>
-                                <div className="Name01">
-                                  <h4 className="infoTxt3">Khrystyne R.</h4>
-                                  <p className="infoTxt2">
-                                    Quality Work At A Fair Price
-                                  </p>
-                                  <div className="dotted-border width"></div>
-                                  <p className="infoTxt1">
-                                    If you would like high quality work with a
-                                    fast turn around for a fair price, contact
-                                    me. You won't be disappointed.
-                                  </p>
-                                </div>
-                              </span>
-                            </div>
-                          </div>
-                          <div className="TopContractor">
-                            <div className="contractorinfo">
-                              
-                              <sup>
-                                <img
-                                  className="imgHoverable"
-                                  alt=""
-                                  src="images/home/img-6a.jpg"
-                                />
-                              </sup>
-                              <span>
-                                <div className="Name01">
-                                  <h4 className="infoTxt3">Khrystyne R.</h4>
-                                  <p className="infoTxt2">
-                                    Quality Work At A Fair Price
-                                  </p>
-                                  <div className="dotted-border width"></div>
-                                  <p className="infoTxt1">
-                                    If you would like high quality work with a
-                                    fast turn around for a fair price, contact
-                                    me. You won't be disappointed.
-                                  </p>
-                                </div>
-                              </span>
-                            </div>
-                          </div>
-                          <div className="TopContractor">
-                            <div className="contractorinfo">
-                              
-                              <sup>
-                                <img
-                                  className="imgHoverable"
-                                  alt=""
-                                  src="images/home/img-7a.jpg"
-                                />
-                              </sup>
-                              <span>
-                                <div className="Name01">
-                                  <h4 className="infoTxt3">Khrystyne R.</h4>
-                                  <p className="infoTxt2">
-                                    Quality Work At A Fair Price
-                                  </p>
-                                  <div className="dotted-border width"></div>
-                                  <p className="infoTxt1">
-                                    If you would like high quality work with a
-                                    fast turn around for a fair price, contact
-                                    me. You won't be disappointed.
-                                  </p>
-                                </div>
-                              </span>
-                            </div>
-                          </div>
-                          <div className="TopContractor">
-                            <div className="contractorinfo">
-                              
-                              <sup>
-                                <img
-                                  className="imgHoverable"
-                                  alt=""
-                                  src="images/home/img-8a.jpg"
-                                />
-                              </sup>
-                              <span>
-                                <div className="Name01">
-                                  <h4 className="infoTxt3">Khrystyne R.</h4>
-                                  <p className="infoTxt2">
-                                    Quality Work At A Fair Price
-                                  </p>
-                                  <div className="dotted-border width"></div>
-                                  <p className="infoTxt1">
-                                    If you would like high quality work with a
-                                    fast turn around for a fair price, contact
-                                    me. You won't be disappointed.
-                                  </p>
-                                </div>
-                              </span>
-                            </div>
-                          </div>
-                          <div className="TopContractor">
-                            <div className="contractorinfo">
-                              
-                              <sup>
-                                <img
-                                  className="imgHoverable"
-                                  alt=""
-                                  src="images/home/img-9a.jpg"
-                                />
-                              </sup>
-                              <span>
-                                <div className="Name01">
-                                  <h4 className="infoTxt3">Khrystyne R.</h4>
-                                  <p className="infoTxt2">
-                                    Quality Work At A Fair Price
-                                  </p>
-                                  <div className="dotted-border width"></div>
-                                  <p className="infoTxt1">
-                                    If you would like high quality work with a
-                                    fast turn around for a fair price, contact
-                                    me. You won't be disappointed.
-                                  </p>
-                                </div>
-                              </span>
-                            </div>
-                          </div>
-                          <div className="TopContractor">
-                            <div className="contractorinfo">
-                              
-                              <sup>
-                                <img
-                                  className="imgHoverable"
-                                  alt=""
-                                  src="images/home/img-9a.jpg"
-                                />
-                              </sup>
-                              <span>
-                                <div className="Name01">
-                                  <h4 className="infoTxt3">Khrystyne R.</h4>
-                                  <p className="infoTxt2">
-                                    Quality Work At A Fair Price
-                                  </p>
-                                  <div className="dotted-border width"></div>
-                                  <p className="infoTxt1">
-                                    If you would like high quality work with a
-                                    fast turn around for a fair price, contact
-                                    me. You won't be disappointed.
-                                  </p>
-                                </div>
-                              </span>
-                            </div>
-                          </div>
-
-                          <div className="TopContractor">
-                            <div className="contractorinfo">
-                              
-                              <sup>
-                                <img
-                                  className="imgHoverable"
-                                  alt=""
-                                  src="images/home/img-9a.jpg"
-                                />
-                              </sup>
-                              <span>
-                                <div className="Name01">
-                                  <h4 className="infoTxt3">Khrystyne R.</h4>
-                                  <p className="infoTxt2">
-                                    Quality Work At A Fair Price
-                                  </p>
-                                  <div className="dotted-border width"></div>
-                                  <p className="infoTxt1">
-                                    If you would like high quality work with a
-                                    fast turn around for a fair price, contact
-                                    me. You won't be disappointed.
-                                  </p>
-                                </div>
-                              </span>
-                            </div>
-                          </div>
-                          <div className="TopContractor">
-                            <div className="contractorinfo">
-                              
-                              <sup>
-                                <img
-                                  className="imgHoverable"
-                                  alt=""
-                                  src="images/home/img-5a.jpg"
-                                />
-                              </sup>
-                              <span>
-                                <div className="Name01">
-                                  <h4 className="infoTxt3">Khrystyne R.</h4>
-                                  <p className="infoTxt2">
-                                    Quality Work At A Fair Price
-                                  </p>
-                                  <div className="dotted-border width"></div>
-                                  <p className="infoTxt1">
-                                    If you would like high quality work with a
-                                    fast turn around for a fair price, contact
-                                    me. You won't be disappointed.
-                                  </p>
-                                </div>
-                              </span>
-                            </div>
-                          </div>
-                          <div className="TopContractor">
-                            <div className="contractorinfo">
-                              
-                              <sup>
-                                <img
-                                  className="imgHoverable"
-                                  alt=""
-                                  src="images/home/img-5a.jpg"
-                                />
-                              </sup>
-                              <span>
-                                <div className="Name01">
-                                  <h4 className="infoTxt3">Khrystyne R.</h4>
-                                  <p className="infoTxt2">
-                                    Quality Work At A Fair Price
-                                  </p>
-                                  <div className="dotted-border width"></div>
-                                  <p className="infoTxt1">
-                                    If you would like high quality work with a
-                                    fast turn around for a fair price, contact
-                                    me. You won't be disappointed.
-                                  </p>
-                                </div>
-                              </span>
-                            </div>
-                          </div>
-                          <div className="TopContractor">
-                            <div className="contractorinfo">
-                              
-                              <sup>
-                                <img
-                                  className="imgHoverable"
-                                  alt=""
-                                  src="images/home/img-5a.jpg"
-                                />
-                              </sup>
-                              <span>
-                                <div className="Name01">
-                                  <h4 className="infoTxt3">Khrystyne R.</h4>
-                                  <p className="infoTxt2">
-                                    Quality Work At A Fair Price
-                                  </p>
-                                  <div className="dotted-border width"></div>
-                                  <p className="infoTxt1">
-                                    If you would like high quality work with a
-                                    fast turn around for a fair price, contact
-                                    me. You won't be disappointed.
-                                  </p>
-                                </div>
-                              </span>
-                            </div>
-                          </div>
-                          <div className="TopContractor">
-                            <div className="contractorinfo">
-                              
-                              <sup>
-                                <img
-                                  className="imgHoverable"
-                                  alt=""
-                                  src="images/home/img-5a.jpg"
-                                />
-                              </sup>
-                              <span>
-                                <div className="Name01">
-                                  <h4 className="infoTxt3">Khrystyne R.</h4>
-                                  <p className="infoTxt2">
-                                    Quality Work At A Fair Price
-                                  </p>
-                                  <div className="dotted-border width"></div>
-                                  <p className="infoTxt1">
-                                    If you would like high quality work with a
-                                    fast turn around for a fair price, contact
-                                    me. You won't be disappointed.
-                                  </p>
-                                </div>
-                              </span>
-                            </div>
-                          </div>
-                          <div className="TopContractor">
-                            <div className="contractorinfo">
-                              
-                              <sup>
-                                <img
-                                  className="imgHoverable"
-                                  alt=""
-                                  src="images/home/img-5a.jpg"
-                                />
-                              </sup>
-                              <span>
-                                <div className="Name01">
-                                  <h4 className="infoTxt3">Khrystyne R.</h4>
-                                  <p className="infoTxt2">
-                                    Quality Work At A Fair Price
-                                  </p>
-                                  <div className="dotted-border width"></div>
-                                  <p className="infoTxt1">
-                                    If you would like high quality work with a
-                                    fast turn around for a fair price, contact
-                                    me. You won't be disappointed.
-                                  </p>
-                                </div>
-                              </span>
-                            </div>
-                          </div>
-                          <div className="TopContractor">
-                            <div className="contractorinfo">
-                              
-                              <sup>
-                                <img
-                                  className="imgHoverable"
-                                  alt=""
-                                  src="images/home/img-9a.jpg"
-                                />
-                              </sup>
-                              <span>
-                                <div className="Name01">
-                                  <h4 className="infoTxt3">Khrystyne R.</h4>
-                                  <p className="infoTxt2">
-                                    Quality Work At A Fair Price
-                                  </p>
-                                  <div className="dotted-border width"></div>
-                                  <p className="infoTxt1">
-                                    If you would like high quality work with a
-                                    fast turn around for a fair price, contact
-                                    me. You won't be disappointed.
-                                  </p>
-                                </div>
-                              </span>
-                            </div>
-                          </div>
-
-                          <div className="TopContractor">
-                            <div className="contractorinfo">
-                              
-                              <sup>
-                                <img
-                                  className="imgHoverable"
-                                  alt=""
-                                  src="images/home/img-9a.jpg"
-                                />
-                              </sup>
-                              <span>
-                                <div className="Name01">
-                                  <h4 className="infoTxt3">Khrystyne R.</h4>
-                                  <p className="infoTxt2">
-                                    Quality Work At A Fair Price
-                                  </p>
-                                  <div className="dotted-border width"></div>
-                                  <p className="infoTxt1">
-                                    If you would like high quality work with a
-                                    fast turn around for a fair price, contact
-                                    me. You won't be disappointed.
-                                  </p>
-                                </div>
-                              </span>
-                            </div>
-                          </div>
-
-                          <div className="TopContractor">
-                            <div className="contractorinfo">
-                              
-                              <sup>
-                                <img
-                                  className="imgHoverable"
-                                  alt=""
-                                  src="images/home/img-9a.jpg"
-                                />
-                              </sup>
-                              <span>
-                                <div className="Name01">
-                                  <h4 className="infoTxt3">Khrystyne R.</h4>
-                                  <p className="infoTxt2">
-                                    Quality Work At A Fair Price
-                                  </p>
-                                  <div className="dotted-border width"></div>
-                                  <p className="infoTxt1">
-                                    If you would like high quality work with a
-                                    fast turn around for a fair price, contact
-                                    me. You won't be disappointed.
-                                  </p>
-                                </div>
-                              </span>
-                            </div>
-                          </div>
-                          <div className="TopContractor">
-                            <div className="contractorinfo">
-                              
-                              <sup>
-                                <img
-                                  className="imgHoverable"
-                                  alt=""
-                                  src="images/home/img-5a.jpg"
-                                />
-                              </sup>
-                              <span>
-                                <div className="Name01">
-                                  <h4 className="infoTxt3">Khrystyne R.</h4>
-                                  <p className="infoTxt2">
-                                    Quality Work At A Fair Price
-                                  </p>
-                                  <div className="dotted-border width"></div>
-                                  <p className="infoTxt1">
-                                    If you would like high quality work with a
-                                    fast turn around for a fair price, contact
-                                    me. You won't be disappointed.
-                                  </p>
-                                </div>
-                              </span>
-                            </div>
-                          </div>
-                          <div className="TopContractor">
-                            <div className="contractorinfo">
-                              
-                              <sup>
-                                <img
-                                  className="imgHoverable"
-                                  alt=""
-                                  src="images/home/img-6a.jpg"
-                                />
-                              </sup>
-                              <span>
-                                <div className="Name01">
-                                  <h4 className="infoTxt3">Khrystyne R.</h4>
-                                  <p className="infoTxt2">
-                                    Quality Work At A Fair Price
-                                  </p>
-                                  <div className="dotted-border width"></div>
-                                  <p className="infoTxt1">
-                                    If you would like high quality work with a
-                                    fast turn around for a fair price, contact
-                                    me. You won't be disappointed.
-                                  </p>
-                                </div>
-                              </span>
-                            </div>
-                          </div>
-                          <div className="TopContractor">
-                            <div className="contractorinfo">
-                              
-                              <sup>
-                                <img
-                                  className="imgHoverable"
-                                  alt=""
-                                  src="images/home/img-7a.jpg"
-                                />
-                              </sup>
-                              <span>
-                                <div className="Name01">
-                                  <h4 className="infoTxt3">Khrystyne R.</h4>
-                                  <p className="infoTxt2">
-                                    Quality Work At A Fair Price
-                                  </p>
-                                  <div className="dotted-border width"></div>
-                                  <p className="infoTxt1">
-                                    If you would like high quality work with a
-                                    fast turn around for a fair price, contact
-                                    me. You won't be disappointed.
-                                  </p>
-                                </div>
-                              </span>
-                            </div>
-                          </div>
-                          <div className="TopContractor">
-                            <div className="contractorinfo">
-                              
-                              <sup>
-                                <img
-                                  className="imgHoverable"
-                                  alt=""
-                                  src="images/home/img-8a.jpg"
-                                />
-                              </sup>
-                              <span>
-                                <div className="Name01">
-                                  <h4 className="infoTxt3">Khrystyne R.</h4>
-                                  <p className="infoTxt2">
-                                    Quality Work At A Fair Price
-                                  </p>
-                                  <div className="dotted-border width"></div>
-                                  <p className="infoTxt1">
-                                    If you would like high quality work with a
-                                    fast turn around for a fair price, contact
-                                    me. You won't be disappointed.
-                                  </p>
-                                </div>
-                              </span>
-                            </div>
-                          </div>
-                          <div className="TopContractor">
-                            <div className="contractorinfo">
-                              
-                              <sup>
-                                <img
-                                  className="imgHoverable"
-                                  alt=""
-                                  src="images/home/img-9a.jpg"
-                                />
-                              </sup>
-                              <span>
-                                <div className="Name01">
-                                  <h4 className="infoTxt3">Khrystyne R.</h4>
-                                  <p className="infoTxt2">
-                                    Quality Work At A Fair Price
-                                  </p>
-                                  <div className="dotted-border width"></div>
-                                  <p className="infoTxt1">
-                                    If you would like high quality work with a
-                                    fast turn around for a fair price, contact
-                                    me. You won't be disappointed.
-                                  </p>
-                                </div>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-6 col-sm-6 col-xs-12">
-                    <div className="row">
-                      <div className="col-md-12 col-sm-12 col-xs-12">
-                        <img alt="" src="images/home/find-work.png" />
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-md-12 col-sm-12 col-xs-12">
-                        <div className="dotted-border width"></div>
-                      </div>
-                    </div>
-                    <div className="row margin-top-10px">
-                      <div className="col-md-12 col-sm-12 col-xs-12">
-                        
-                        <span className="width">
-                          <small>Chirs Chella</small>
-                          <small className="pull-right">
-                            <span className="usa-flag"></span>United States
-                          </small>
-                          <br />
-                        </span>
-                        <div className="dotted-border width margin-top-5px margin-bottom-5px"></div>
-                        <h5>Redo E-Mail Template</h5>
-                        <small>
-                          Fixed Price: Less than $500 | Other - Design |
-                        </small>
-                        <br />
-                        <small>
-                          Posted: 8 minutes ago | Ends: 14d, 23h | 0 Proposals
-                        </small>
-                        <div className="dotted-border width margin-top-5px margin-bottom-5px"></div>
-                        <small>
-                          Have an email template 90% designed in GO DADDY email
-                          marketing program but there are some minor changes i
-                          need done.
-                        </small>
-                        <div className="dotted-border width margin-top-5px margin-bottom-5px"></div>
-                        <small>Desired Skills</small>
-                        <br />
-                        <small>Graphic Design, Photoshop</small>
-                        <button
-                          className="btn btn-primary font-2 pull-right "
-                          type="button"
-                        >
-                          VIEW ALL DETAILS
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-4 col-sm-4 col-xs-12 margin-top-12px">
-            <div className="row">
-              <div className="col-md-6 col-sm-9 col-xs-12">
-                <img
-                  alt=""
-                  src="images/home/featured-projects.png"
-                  className="img-responsive"
-                />
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-md-12 col-sm-12 col-xs-12">
-                <div className="dotted-border width"></div>
-              </div>
-            </div>
-
-            <div className="row margin-top-20px margin-bottom-20px">
-              <div className="col-md-12 col-sm-12 col-xs-12">
-                <div
-                  data-ride="carousel-c"
-                  className="carousel slide"
-                  id="carousel-example-generic-c"
-                >
-                  <div className="carousel-inner">
-                    <div className="item  active">
-                      <div className="row">
-                        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                          <article className="caption overlayImg09">
-                            
-                            <img
-                              alt=""
-                              className="caption__media img-responsive"
-                              src="images/home/img-1.jpg"
-                            />
-                            <div className="caption__overlay">
-                              <h6 className="caption__overlay__title">
-                                <strong>Modern Family</strong>
-                              </h6>
-                              <p className="caption__overlay__content">
-                                President addresses crowd in Milwaukee...
-                              </p>
-                            </div>
-                          </article>
-                          <article className="caption overlayImg09">
-                            
-                            <img
-                              alt=""
-                              className="caption__media img-responsive"
-                              src="images/home/img-2.jpg"
-                            />
-                            <div className="caption__overlay">
-                              <h6 className="caption__overlay__title">
-                                <strong>Modern Family</strong>
-                              </h6>
-                              <p className="caption__overlay__content">
-                                President addresses crowd in Milwaukee...
-                              </p>
-                            </div>
-                          </article>
-                          <article className="caption overlayImg09">
-                            
-                            <img
-                              alt=""
-                              className="caption__media img-responsive"
-                              src="images/home/img-3.jpg"
-                            />
-                            <div className="caption__overlay">
-                              <h6 className="caption__overlay__title">
-                                <strong>Modern Family</strong>
-                              </h6>
-                              <p className="caption__overlay__content">
-                                President addresses crowd in Milwaukee...
-                              </p>
-                            </div>
-                          </article>
-                          <article className="caption overlayImg09">
-                            
-                            <img
-                              alt=""
-                              className="caption__media img-responsive"
-                              src="images/home/img-4.jpg"
-                            />
-                            <div className="caption__overlay">
-                              <h6 className="caption__overlay__title">
-                                <strong>Modern Family</strong>
-                              </h6>
-                              <p className="caption__overlay__content">
-                                President addresses crowd in Milwaukee...
-                              </p>
-                            </div>
-                          </article>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="item">
-                      <div className="row">
-                        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                          <article className="caption overlayImg09">
-                            
-                            <img
-                              alt=""
-                              className="caption__media img-responsive"
-                              src="images/home/img-1.jpg"
-                            />
-                            <div className="caption__overlay">
-                              <h6 className="caption__overlay__title">
-                                <strong>Modern Family</strong>
-                              </h6>
-                              <p className="caption__overlay__content">
-                                President addresses crowd in Milwaukee...
-                              </p>
-                            </div>
-                          </article>
-                          <article className="caption overlayImg09">
-                            
-                            <img
-                              alt=""
-                              className="caption__media img-responsive"
-                              src="images/home/img-2.jpg"
-                            />
-                            <div className="caption__overlay">
-                              <h6 className="caption__overlay__title">
-                                <strong>Modern Family</strong>
-                              </h6>
-                              <p className="caption__overlay__content">
-                                President addresses crowd in Milwaukee...
-                              </p>
-                            </div>
-                          </article>
-                          <article className="caption overlayImg09">
-                            
-                            <img
-                              alt=""
-                              className="caption__media img-responsive"
-                              src="images/home/img-3.jpg"
-                            />
-                            <div className="caption__overlay">
-                              <h6 className="caption__overlay__title">
-                                <strong>Modern Family</strong>
-                              </h6>
-                              <p className="caption__overlay__content">
-                                President addresses crowd in Milwaukee...
-                              </p>
-                            </div>
-                          </article>
-                          <article className="caption overlayImg09">
-                            
-                            <img
-                              alt=""
-                              className="caption__media img-responsive"
-                              src="images/home/img-4.jpg"
-                            />
-                            <div className="caption__overlay">
-                              <h6 className="caption__overlay__title">
-                                <strong>Modern Family</strong>
-                              </h6>
-                              <p className="caption__overlay__content">
-                                President addresses crowd in Milwaukee...
-                              </p>
-                            </div>
-                          </article>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="item">
-                      <div className="row">
-                        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                          <article className="caption overlayImg09">
-                            
-                            <img
-                              alt=""
-                              className="caption__media img-responsive"
-                              src="images/home/img-1.jpg"
-                            />
-                            <div className="caption__overlay">
-                              <h6 className="caption__overlay__title">
-                                <strong>Modern Family</strong>
-                              </h6>
-                              <p className="caption__overlay__content">
-                                President addresses crowd in Milwaukee...
-                              </p>
-                            </div>
-                          </article>
-                          <article className="caption overlayImg09">
-                            
-                            <img
-                              alt=""
-                              className="caption__media img-responsive"
-                              src="images/home/img-2.jpg"
-                            />
-                            <div className="caption__overlay">
-                              <h6 className="caption__overlay__title">
-                                <strong>Modern Family</strong>
-                              </h6>
-                              <p className="caption__overlay__content">
-                                President addresses crowd in Milwaukee...
-                              </p>
-                            </div>
-                          </article>
-                          <article className="caption overlayImg09">
-                            
-                            <img
-                              alt=""
-                              className="caption__media img-responsive"
-                              src="images/home/img-3.jpg"
-                            />
-                            <div className="caption__overlay">
-                              <h6 className="caption__overlay__title">
-                                <strong>Modern Family</strong>
-                              </h6>
-                              <p className="caption__overlay__content">
-                                President addresses crowd in Milwaukee...
-                              </p>
-                            </div>
-                          </article>
-                          <article className="caption overlayImg09">
-                            
-                            <img
-                              alt=""
-                              className="caption__media img-responsive"
-                              src="images/home/img-4.jpg"
-                            />
-                            <div className="caption__overlay">
-                              <h6 className="caption__overlay__title">
-                                <strong>Modern Family</strong>
-                              </h6>
-                              <p className="caption__overlay__content">
-                                President addresses crowd in Milwaukee...
-                              </p>
-                            </div>
-                          </article>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <a
-                    data-slide="prev"
-                    href="#carousel-example-generic-c"
-                    className="left carousel-control"
-                  >
-                    
-                    <img alt="" src="images/home/arrow-left.png" />
-                  </a>
-                  <a
-                    data-slide="next"
-                    href="#carousel-example-generic-c"
-                    className="right carousel-control"
-                  >
-                    
-                    <img alt="" src="images/home/arrow-right.png" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-md-12 col-sm-12 col-xs-12">
-            <div className="row">
-              <div className="col-md-12 col-sm-12 col-xs-12">
-                <div className="row">
-                  <div className="col-md-6 col-sm-6 col-xs-12">
-                    <img
-                      alt=""
-                      src="images/home/new-twits.png"
-                      className="img-responsive"
-                    />
-                  </div>
-                  <div className="col-md-6 col-sm-6 col-xs-12 ">
-                    <img
-                      alt=""
-                      src="images/home/follow-us-on-twitter.png"
-                      className="pull-right img-responsive"
-                    />
-                  </div>
-                </div>
-                <div className="dotted-border width"></div>
-
-                <div>
-                  <div
-                    data-ride="carousel-b"
-                    className="carousel slide"
-                    id="carousel-example-captions1"
-                  >
-                    <ol className="carousel-indicators">
-                      <li
-                        className="active"
-                        data-slide-to="0"
-                        data-target="#carousel-example-captions1"
-                      ></li>
-                      <li
-                        data-slide-to="1"
-                        data-target="#carousel-example-captions1"
-                      ></li>
-                      <li
-                        data-slide-to="2"
-                        data-target="#carousel-example-captions1"
-                        className=""
-                      ></li>
-                    </ol>
-                    <div className="carousel-inner">
-                      <div className="item active">
-                        <div className="row margin-top-20px">
-                          <div className="col-md-12 col-sm-12 col-xs-12">
-                            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                              <div className="NewTwits">
-                                <img
-                                  src="images/home/img-24.jpg"
-                                  width="62"
-                                  height="56"
-                                  alt=""
-                                  className="img-responsive"
-                                />
-                                <div
-                                  className="popover right"
-                                  style="display:inline-block; float:left; position:inherit"
-                                >
-                                  <div className="arrow" style="top:20%;"></div>
-                                  <div className="popover-content">
-                                    
-                                    <small>
-                                      <a href="#" className="orange-text">
-                                        @topcreative
-                                      </a>
-                                      There are many variations of passages of
-                                      Lorem Ipsum available, but the majority
-                                      have suffered alteration...
-                                    </small>
-                                    <br />
-                                    <small className="green-text">
-                                      about 40 minutes ago
-                                    </small>
-                                    <small className="pull-right twitter-icon margin-top-5px"></small>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                              <div className="NewTwits">
-                                <img
-                                  src="images/home/img-24.jpg"
-                                  width="62"
-                                  height="56"
-                                  alt=""
-                                  className="img-responsive"
-                                />
-                                <div
-                                  className="popover right"
-                                  style="display:block; float:left; position:inherit"
-                                >
-                                  <div className="arrow" style="top:20%"></div>
-                                  <div className="popover-content">
-                                    
-                                    <small>
-                                      <a href="#" className="orange-text">
-                                        @topcreative
-                                      </a>
-                                      There are many variations of passages of
-                                      Lorem Ipsum available, but the majority
-                                      have suffered alteration...
-                                    </small>
-                                    <br />
-                                    <small className="green-text">
-                                      about 40 minutes ago
-                                    </small>
-                                    <small className="pull-right twitter-icon margin-top-5px"></small>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                              <div className="NewTwits">
-                                <img
-                                  src="images/home/img-24.jpg"
-                                  width="62"
-                                  height="56"
-                                  alt=""
-                                  className="img-responsive"
-                                />
-                                <div
-                                  className="popover right"
-                                  style="display:block; float:left; position:inherit"
-                                >
-                                  <div className="arrow" style="top:20%"></div>
-                                  <div className="popover-content">
-                                    
-                                    <small>
-                                      <a href="#" className="orange-text">
-                                        @topcreative
-                                      </a>
-                                      There are many variations of passages of
-                                      Lorem Ipsum available, but the majority
-                                      have suffered alteration...
-                                    </small>
-                                    <br />
-                                    <small className="green-text">
-                                      about 40 minutes ago
-                                    </small>
-                                    <small className="pull-right twitter-icon margin-top-5px"></small>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="item">
-                        <div className="row margin-top-20px">
-                          <div className="col-md-12 col-sm-12 col-xs-12">
-                            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                              <div className="NewTwits">
-                                <img
-                                  src="images/home/img-24.jpg"
-                                  width="62"
-                                  height="56"
-                                  alt=""
-                                  className="img-responsive"
-                                />
-                                <div
-                                  className="popover right"
-                                  style="display:block; float:left; position:inherit"
-                                >
-                                  <div className="arrow" style="top:20%"></div>
-                                  <div className="popover-content">
-                                    
-                                    <small>
-                                      <a href="#" className="orange-text">
-                                        @topcreative
-                                      </a>
-                                      There are many variations of passages of
-                                      Lorem Ipsum available, but the majority
-                                      have suffered alteration...
-                                    </small>
-                                    <br />
-                                    <small className="green-text">
-                                      about 40 minutes ago
-                                    </small>
-                                    <small className="pull-right twitter-icon margin-top-5px"></small>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                              <div className="NewTwits">
-                                <img
-                                  src="images/home/img-24.jpg"
-                                  width="62"
-                                  height="56"
-                                  alt=""
-                                  className="img-responsive"
-                                />
-                                <div
-                                  className="popover right"
-                                  style="display:block; float:left; position:inherit"
-                                >
-                                  <div className="arrow" style="top:20%"></div>
-                                  <div className="popover-content">
-                                    
-                                    <small>
-                                      <a href="#" className="orange-text">
-                                        @topcreative
-                                      </a>
-                                      There are many variations of passages of
-                                      Lorem Ipsum available, but the majority
-                                      have suffered alteration...
-                                    </small>
-                                    <br />
-                                    <small className="green-text">
-                                      about 40 minutes ago
-                                    </small>
-                                    <small className="pull-right twitter-icon margin-top-5px"></small>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                              <div className="NewTwits">
-                                <img
-                                  src="images/home/img-24.jpg"
-                                  width="62"
-                                  height="56"
-                                  alt=""
-                                  className="img-responsive"
-                                />
-                                <div
-                                  className="popover right"
-                                  style="display:block; float:left; position:inherit"
-                                >
-                                  <div className="arrow" style="top:20%"></div>
-                                  <div className="popover-content">
-                                    
-                                    <small>
-                                      <a href="#" className="orange-text">
-                                        @topcreative
-                                      </a>
-                                      There are many variations of passages of
-                                      Lorem Ipsum available, but the majority
-                                      have suffered alteration...
-                                    </small>
-                                    <br />
-                                    <small className="green-text">
-                                      about 40 minutes ago
-                                    </small>
-                                    <small className="pull-right twitter-icon margin-top-5px"></small>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="item">
-                        <div className="row margin-top-20px">
-                          <div className="col-md-12 col-sm-12 col-xs-12">
-                            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                              <div className="NewTwits">
-                                <img
-                                  src="images/home/img-24.jpg"
-                                  width="62"
-                                  height="56"
-                                  alt=""
-                                  className="img-responsive"
-                                />
-                                <div
-                                  className="popover right"
-                                  style="display:block; float:left; position:inherit"
-                                >
-                                  <div className="arrow" style="top:20%"></div>
-                                  <div className="popover-content">
-                                    
-                                    <small>
-                                      <a href="#" className="orange-text">
-                                        @topcreative
-                                      </a>
-                                      There are many variations of passages of
-                                      Lorem Ipsum available, but the majority
-                                      have suffered alteration...
-                                    </small>
-                                    <br />
-                                    <small className="green-text">
-                                      about 40 minutes ago
-                                    </small>
-                                    <small className="pull-right twitter-icon margin-top-5px"></small>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                              <div className="NewTwits">
-                                <img
-                                  src="images/home/img-24.jpg"
-                                  width="62"
-                                  height="56"
-                                  alt=""
-                                  className="img-responsive"
-                                />
-                                <div
-                                  className="popover right"
-                                  style="display:block; float:left; position:inherit"
-                                >
-                                  <div className="arrow" style="top:20%"></div>
-                                  <div className="popover-content">
-                                    
-                                    <small>
-                                      <a href="#" className="orange-text">
-                                        @topcreative
-                                      </a>
-                                      There are many variations of passages of
-                                      Lorem Ipsum available, but the majority
-                                      have suffered alteration...
-                                    </small>
-                                    <br />
-                                    <small className="green-text">
-                                      about 40 minutes ago
-                                    </small>
-                                    <small className="pull-right twitter-icon margin-top-5px"></small>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                              <div className="NewTwits">
-                                <img
-                                  src="images/home/img-24.jpg"
-                                  width="62"
-                                  height="56"
-                                  alt=""
-                                  className="img-responsive"
-                                />
-                                <div
-                                  className="popover right"
-                                  style="display:block; float:left; position:inherit;"
-                                >
-                                  <div className="arrow" style="top:20%"></div>
-                                  <div className="popover-content">
-                                    
-                                    <small>
-                                      <a href="#" className="orange-text">
-                                        @topcreative
-                                      </a>
-                                      There are many variations of passages of
-                                      Lorem Ipsum available, but the majority
-                                      have suffered alteration...
-                                    </small>
-                                    <br />
-                                    <small className="green-text">
-                                      about 40 minutes ago
-                                    </small>
-                                    <small className="pull-right twitter-icon margin-top-5px"></small>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
+        ))}
       </div>
-    </>
+
+      {/* Overlaid indicators (no arrows) */}
+      <div className="carousel-dots">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            className={`dot ${i === index ? "active" : ""}`}
+            onClick={() => setIndex(i)}
+            aria-label={`Go to slide ${i + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const TopContractors = ({ images = [c1, c2, c3, c4, c5, c6, c7, c8] }) => {
+  const items = images;
+  return (
+    <div className="top-contractors">
+      {items.map((img, i) => (
+        <div
+          key={i}
+          className="contractor-card"
+          tabIndex={0}
+          aria-label={`Contractor ${i + 1}`}
+        >
+          <img src={img} alt={`contractor-${i}`} className="contractor-img" />
+          <blockquote className="contractor-quote">
+            <b>Khrystyne R.</b>
+            <div className="quote-title">Quality Work At A Fair Price</div>
+            <div className="quote-text">
+              If you would like high quality work with a fast turn around for a
+              fair price, contact me. You won't be disappointed.
+            </div>
+          </blockquote>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+const FindWork = () => (
+  <div className="find-work">
+    {/* 1. FLEX CONTAINER FOR HEADER ROW */}
+    <div className="fw-top-row d-flex justify-content-between border-bottom">
+      <div className="fw-user">Chirs Chella</div>
+      <div className="fw-location">
+        <span role="img" aria-label="United States flag"></span> United States
+      </div>
+    </div>
+
+    <h5 className="fw-title border-bottom">Redo E-Mail Template</h5>
+
+    {/* 2. UPDATED META WITH POSTED/ENDS INFO */}
+    <div className="fw-meta border-bottom">
+      Fixed Price: Less than $500 | Other - Design |
+      <span className="fw-date-meta">
+        Posted: 8 minutes ago | Ends: 14d, 23h | 0 Proposals
+      </span>
+    </div>
+
+    <p className="fw-desc border-bottom">
+      Have an email template 90% designed in GO DADDY email marketing program
+      but there are some minor changes i need done.
+    </p>
+
+    {/* 3. FLEX CONTAINER FOR SKILLS AND BUTTON */}
+    <div className="fw-bottom-row">
+      <small>Desired Skills</small> <br />
+      <div className="fw-skills d-flex justify-content-between">
+        <small>Graphic Design, Photoshop</small>
+        <button className="btn-primary">VIEW ALL DETAILS</button>
+      </div>
+    </div>
+  </div>
+);
+
+const TwitsCarousel = ({ cards = null, interval = 6000 }) => {
+  // fallback sample cards
+  const defaultCards = new Array(6).fill(null).map((_, i) => ({
+    img: twitImg,
+    handle: "@topcreative",
+    text: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration...",
+    time: "about 40 minutes ago",
+  }));
+  const items = cards;
+
+  // show 3 cards per slide on desktop, 1 on mobile using CSS width; here we paginate every 3
+  const perSlide = 3;
+  const slidesCount = Math.ceil(items.length / perSlide);
+  const [slide, setSlide] = useState(0);
+
+  useEffect(() => {
+    const t = setInterval(
+      () => setSlide((s) => (s + 1) % slidesCount),
+      interval
+    );
+    return () => clearInterval(t);
+  }, [slidesCount, interval]);
+
+  const current = items.slice(slide * perSlide, slide * perSlide + perSlide);
+
+  return (
+    <div className="twits-carousel">
+      <div className="twits-row">
+        {current.map((c, i) => (
+          <article key={i} className="twit-card">
+            <img src={c.img} alt="author" />
+            <div className="twit-body">
+              <div className="twit-handle">{c.handle}</div>
+              <p className="twit-text">{c.text}</p>
+              <div className="twit-time">{c.time}</div>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div className="twits-controls">
+        <div className="dots">
+          {Array.from({ length: slidesCount }).map((_, i) => (
+            <button
+              key={i}
+              className={`dot ${i === slide ? "active" : ""}`}
+              onClick={() => setSlide(i)}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const FeaturedCarousel = ({ items = [f1, f2, f3, f4, f5, f6, f7, f8] }) => {
+  // create slides of 4 (2x2)
+  const chunk = [];
+  for (let i = 0; i < items.length; i += 4) {
+    chunk.push(items.slice(i, i + 4));
+  }
+  const [idx, setIdx] = useState(0);
+  return (
+    <div className="featured-carousel">
+      <div className="featured-slide">
+        <div className="grid-2x2">
+          {chunk[idx].map((img, i) => (
+            <div key={i} className="feat-item">
+              <img src={img} alt={`feat-${idx}-${i}`} />
+              <div className="feat-overlay">
+                <h6>Project Title</h6>
+                <small>Small project caption</small>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default function Home() {
+  const swapToHover = (e, hoverImg) => {
+    e.currentTarget.src = hoverImg;
+  };
+
+  const swapToDefault = (e, defaultImg) => {
+    e.currentTarget.src = defaultImg;
+  };
+
+  return (
+    <main className="home-page container">
+      <div className="grid-top">
+        {/* LEFT: large carousel */}
+        <section className="left">
+          <TopCarousel />
+
+          <div className="search-row">
+            <input placeholder="Enter Keyword" />
+            <div className="search-icons">
+              {/* placeholders for small icons */}
+              <span className="icon small">🔍</span>
+            </div>
+          </div>
+
+          <div className="mid">
+            <div className="contracts-block">
+              <h4 className="text-secondary">
+                <span className="fw-bold">TOP</span> CONTRACTORS
+              </h4>
+              <TopContractors />
+            </div>
+
+            <div className="find-block">
+              <h4 className="text-secondary border-bottom">
+                <span className="fw-bold border-3 border-bottom">FIND</span>{" "}
+                WORK
+              </h4>
+              <FindWork />
+            </div>
+          </div>
+        </section>
+
+        {/* RIGHT: sign-in + featured */}
+        <aside className="right">
+          <div className="signin-card">
+            <h5 className="border-bottom">
+              <span className="fw-bold border-bottom border-3">SIGN</span> IN
+            </h5>
+            <input placeholder="Email or username" />
+            <input placeholder="Password" type="password" />
+            <button className="btn-primary">SIGN IN</button>
+
+            <div className="or-sep text-secondary">
+              <span className="fw-bolder text-secondary">OR</span>
+            </div>
+
+            <div className="social-row">
+              <button className="social">
+                <img
+                  src={fb1}
+                  alt="Facebook"
+                  className="social-img"
+                  onMouseEnter={(e) => swapToHover(e, fb2)}
+                  onMouseLeave={(e) => swapToDefault(e, fb1)}
+                />
+              </button>
+
+              <button className="social">
+                <img
+                  src={twitter1}
+                  alt="Twitter"
+                  className="social-img"
+                  onMouseEnter={(e) => swapToHover(e, twitter2)}
+                  onMouseLeave={(e) => swapToDefault(e, twitter1)}
+                />
+              </button>
+
+              <button className="social">
+                <img
+                  src={google1}
+                  alt="Google Plus"
+                  className="social-img"
+                  onMouseEnter={(e) => swapToHover(e, google2)}
+                  onMouseLeave={(e) => swapToDefault(e, google1)}
+                />
+              </button>
+            </div>
+
+            <h6 className="create-title border-bottom my-3">
+              <b className="border-bottom border-3">CREATE</b> AN ACCOUNT
+            </h6>
+            <div className="create-actions gap-3 d-flex justify-align-content-start align-middle">
+              <label>
+                <input type="checkbox" className="w-auto me-1" /> I WANT TO POST
+                JOB
+              </label>
+              <label>
+                <input type="checkbox" className="w-auto me-1" /> I WANT TO FIND
+                JOB
+              </label>
+            </div>
+
+            <div className="or-sep text-primary">
+              <span className="fw-bolder text-primary">OR</span>
+            </div>
+            <div className="social-row">
+              <button className="social">
+                <img
+                  src={fb1}
+                  alt="Facebook"
+                  className="social-img"
+                  onMouseEnter={(e) => swapToHover(e, fb3)}
+                  onMouseLeave={(e) => swapToDefault(e, fb1)}
+                />
+              </button>
+
+              <button className="social">
+                <img
+                  src={twitter1}
+                  alt="Twitter"
+                  className="social-img"
+                  onMouseEnter={(e) => swapToHover(e, twitter3)}
+                  onMouseLeave={(e) => swapToDefault(e, twitter1)}
+                />
+              </button>
+
+              <button className="social">
+                <img
+                  src={google1}
+                  alt="Google Plus"
+                  className="social-img"
+                  onMouseEnter={(e) => swapToHover(e, google3)}
+                  onMouseLeave={(e) => swapToDefault(e, google1)}
+                />
+              </button>
+            </div>
+          </div>
+
+          <div className="featured-block">
+            <div className="d-flex justify-content-between border-bottom mb-3">
+              <h5 className="heading mb-0">
+                <b className="">FEATURED</b> PROJECTS
+              </h5>
+              <div className="featured-controls">
+                <button
+                  onClick={() =>
+                    setIdx((x) => (x - 1 + chunk.length) % chunk.length)
+                  }
+                >
+                  ‹
+                </button>
+                <button onClick={() => setIdx((x) => (x + 1) % chunk.length)}>
+                  ›
+                </button>
+              </div>
+            </div>
+            <FeaturedCarousel />
+          </div>
+        </aside>
+      </div>
+      <section>
+        {/* New twits row */}
+        <div className="row twits-row">
+          <div className="col-12">
+            <h4 className="heading">
+              {" "}
+              <b>NEW</b> TWITS
+            </h4>
+            <TwitsCarousel cards={twitsData} />
+          </div>
+          <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      sfsfsf
+    </div>
+    <div class="carousel-item">
+      ffffffffffff
+    </div>
+    <div class="carousel-item">
+      wwww
+    </div>
+  </div>
+</div>
+        </div>
+      </section>
+    </main>
   );
 }
-
-export default Home;

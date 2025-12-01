@@ -55,18 +55,17 @@
   transition: all 0.3s ease;
   font-size: 12px;
   padding: 10px 16px;
-
 }
 
 .sidebar-menu .list-group-item:last-child {
   border-bottom: none;
 }
 
-.list-group-item.active{
-    background: #e7e7e6 !important;
-    font-weight: bold;
-    border: none;
-    border-radius: none !important;
+.list-group-item.active {
+  background: #e7e7e6 !important;
+  font-weight: bold;
+  border: none;
+  border-radius: none !important;
 }
 
 .sidebar-menu .list-group-item a {
@@ -77,11 +76,12 @@
 }
 
 .sidebar-menu .list-group-item.active a {
-color: #727272 !important;}
+  color: #727272 !important;
+}
 
 .sidebar-menu .list-group-item:hover:not(.active) a {
   text-decoration: underline;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 /* Company Header */
@@ -197,14 +197,14 @@ color: #727272 !important;}
 
 /* Contact Card */
 .contact-card {
-  border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .contact-header {
-  background-color: #ffc107;
-  color: #333;
+  background-color: #f2ca50;
+  color: #4d3a01 !important;
+  text-shadow: 1px 1px 1px #fff;
   text-align: center;
 }
 
@@ -277,7 +277,8 @@ color: #727272 !important;}
 }
 
 /* Job Sections */
-.job-stats, .job-stats-mobile {
+.job-stats,
+.job-stats-mobile {
   background-color: #f3eaca;
 }
 
@@ -331,7 +332,8 @@ color: #727272 !important;}
 }
 
 /* Certifications & Education */
-.cert-item, .edu-item {
+.cert-item,
+.edu-item {
   padding: 0;
 }
 
@@ -379,16 +381,16 @@ color: #727272 !important;}
   .profile-container {
     padding-top: 10px;
   }
-  
+
   .login-info {
     font-size: 0.8rem;
   }
-  
+
   .gauges-grid .col-6 {
     flex: 0 0 50%;
     max-width: 50%;
   }
-  
+
   .portfolio-img-placeholder {
     height: 120px;
   }
@@ -399,7 +401,7 @@ color: #727272 !important;}
     flex: 0 0 100%;
     max-width: 100%;
   }
-  
+
   .portfolio-img-placeholder {
     height: 100px;
   }

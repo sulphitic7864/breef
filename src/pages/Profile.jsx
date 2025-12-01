@@ -4,7 +4,8 @@ import "../assets/styles/Profile.css";
 import SubNavbar from "../components/SubNavbar";
 import profile from "../assets/images/profile.jpg";
 import designer from "../assets/images/designer.jpg";
-import { FaStar, FaCaretDown } from "react-icons/fa"; // Import the star icon
+import varification from "../assets/images/verifications.jpg";
+import { FaStar, FaCaretDown, FaRegArrowAltCircleRight   } from "react-icons/fa"; // Import the star icon
 
 const RatingDisplay = ({
   rating = 2,
@@ -288,7 +289,7 @@ const Profile = () => {
           <div className="row mb-2">
             <div className="col-12">
               <div className="gauges-grid row g-3">
-                <div className="col-6 col-md-4 col-lg-2">
+                <div className="col-4 col-md-4 col-lg-2">
                   {renderCircularGauge(
                     animatedValues.design,
                     "Design",
@@ -296,7 +297,7 @@ const Profile = () => {
                     "#df6c4f"
                   )}
                 </div>
-                <div className="col-6 col-md-4 col-lg-2">
+                <div className="col-4 col-md-4 col-lg-2">
                   {renderCircularGauge(
                     animatedValues.creativity,
                     "Creativity",
@@ -304,7 +305,7 @@ const Profile = () => {
                     "#ecd06f"
                   )}
                 </div>
-                <div className="col-6 col-md-4 col-lg-2">
+                <div className="col-4 col-md-4 col-lg-2">
                   {renderCircularGauge(
                     animatedValues.usability,
                     "Usability",
@@ -312,7 +313,7 @@ const Profile = () => {
                     "#3c948b"
                   )}
                 </div>
-                <div className="col-6 col-md-4 col-lg-2">
+                <div className="col-4 col-md-4 col-lg-2">
                   {renderCircularGauge(
                     animatedValues.content,
                     "Content",
@@ -320,7 +321,7 @@ const Profile = () => {
                     "#1a99aa"
                   )}
                 </div>
-                <div className="col-6 col-md-4 col-lg-2">
+                <div className="col-4 col-md-4 col-lg-2">
                   {renderCircularGauge(
                     animatedValues.average,
                     "Average",
@@ -342,9 +343,9 @@ const Profile = () => {
         {/* Right Contact Card */}
         <div className="col-md-3 col-lg-3 mb-2">
           <div className="contact-card">
-            <div className="contact-header btn-warning p-3">
+            <div className="contact-header p-2 mb-2">
               <h6 className="mb-0">
-                <strong>Contact or Post a Job</strong>
+                <strong>Contact or Post a Job</strong> <FaRegArrowAltCircleRight  />
               </h6>
             </div>
             <div className="table-responsive">
@@ -352,7 +353,7 @@ const Profile = () => {
                 <tbody>
                   <tr>
                     <td colSpan="2">
-                      <h5>ID</h5>
+                      <h5 className="mb-0">ID</h5>
                     </td>
                   </tr>
                   <tr>
@@ -399,10 +400,10 @@ const Profile = () => {
                       <small>Verifications</small>
                       <div className="text-center my-3">
                         <div className="verification-placeholder">
-                          Verification Images
+                          <img src={varification} alt="varification" />
                         </div>
                       </div>
-                      <div className="download-widget text-center py-2">
+                      <div className="download-widget text-center py-2 ">
                         <small className="text-white">
                           <strong>Download your profile widget</strong>
                         </small>

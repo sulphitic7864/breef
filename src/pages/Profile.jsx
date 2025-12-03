@@ -495,42 +495,28 @@ const Profile = () => {
       {/* Team Members */}
       <div className="row mb-4">
         <div className="col-12">
-          <div className="table-responsive">
-            <table className="table table-bordered">
-              <tbody>
-                <tr>
-                  <td colSpan="4">
-                    <div className="d-flex justify-content-between align-items-center">
-                      <b>Team Members</b>
-                      <button className="btn btn-primary btn-sm">
-                        <small>
-                          <strong>Add new Member</strong>
-                        </small>
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  {[1, 2, 3, 4].map((member, index) => (
-                    <td key={index} className="team-member-cell">
-                      <div className="d-flex justify-content-between align-items-center">
-                        <div>
-                          <span className="fw-semibold">Corentin Pellé</span>
-                          <br />
-                          <small>Designer</small>
-                        </div>
-                        <div className="team-member-img">
-                          <div className="img-placeholder">
-                            <img src={designer} alt="" />
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                  ))}
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <div className="team-section mb-3">
+  <div className="d-flex justify-content-between align-items-center mb-2">
+    <b>Team Members</b>
+    <button className="btn btn-primary btn-sm">
+      <small><strong>Add new Member</strong></small>
+    </button>
+  </div>
+
+  <div className="d-flex justify-content-between align-items-center border">
+    {[1, 2, 3, 4].map((member, index) => (
+      <div key={index} className="d-flex justify-content-between border w-100 p-3">
+        <div>
+          <span className="fw-semibold">Corentin Pellé</span><br />
+          <small>Designer</small>
+        </div>
+
+        <img src={designer} alt="Designer" className="team-img" />
+      </div>
+    ))}
+  </div>
+</div>
+
         </div>
       </div>
 

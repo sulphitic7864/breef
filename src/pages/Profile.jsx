@@ -5,7 +5,7 @@ import SubNavbar from "../components/SubNavbar";
 import profile from "../assets/images/profile.jpg";
 import designer from "../assets/images/designer.jpg";
 import varification from "../assets/images/verifications.jpg";
-import { FaStar, FaCaretDown, FaRegArrowAltCircleRight   } from "react-icons/fa"; // Import the star icon
+import { FaStar, FaCaretDown, FaRegArrowAltCircleRight } from "react-icons/fa"; // Import the star icon
 
 const RatingDisplay = ({
   rating = 2,
@@ -345,7 +345,8 @@ const Profile = () => {
           <div className="contact-card">
             <div className="contact-header p-2 mb-2">
               <h6 className="mb-0">
-                <strong>Contact or Post a Job</strong> <FaRegArrowAltCircleRight  />
+                <strong>Contact or Post a Job</strong>{" "}
+                <FaRegArrowAltCircleRight />
               </h6>
             </div>
             <div className="table-responsive">
@@ -496,27 +497,32 @@ const Profile = () => {
       <div className="row mb-4">
         <div className="col-12">
           <div className="team-section mb-3">
-  <div className="d-flex justify-content-between align-items-center mb-2">
-    <b>Team Members</b>
-    <button className="btn btn-primary btn-sm">
-      <small><strong>Add new Member</strong></small>
-    </button>
-  </div>
+            <div className="d-flex justify-content-between align-items-center mb-2">
+              <b>Team Members</b>
+              <button className="btn btn-primary btn-sm">
+                <small>
+                  <strong>Add new Member</strong>
+                </small>
+              </button>
+            </div>
 
-  <div className="d-flex justify-content-between align-items-center border">
-    {[1, 2, 3, 4].map((member, index) => (
-      <div key={index} className="d-flex justify-content-between border w-100 p-3">
-        <div>
-          <span className="fw-semibold">Corentin Pellé</span><br />
-          <small>Designer</small>
-        </div>
+            <div className="d-flex justify-content-between align-items-center border">
+              {[1, 2, 3, 4].map((member, index) => (
+                <div
+                  key={index}
+                  className="d-flex justify-content-between border w-100 p-3"
+                >
+                  <div>
+                    <span className="fw-semibold">Corentin Pellé</span>
+                    <br />
+                    <small>Designer</small>
+                  </div>
 
-        <img src={designer} alt="Designer" className="team-img" />
-      </div>
-    ))}
-  </div>
-</div>
-
+                  <img src={designer} alt="Designer" className="team-img" />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 

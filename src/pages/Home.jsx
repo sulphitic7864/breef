@@ -39,47 +39,40 @@ const twitsData = [
   {
     img: twitImg,
     handle: "@topcreative",
-    text:
-      "New design trends are emerging quickly! Discover what’s hot in digital creativity this week.",
+    text: "New design trends are emerging quickly! Discover what’s hot in digital creativity this week.",
     time: "10 minutes ago",
   },
   {
     img: twitImg,
     handle: "@DesignMasters",
-    text:
-      "Typography matters. A simple font change can bring a brand to life. Always explore your options!",
+    text: "Typography matters. A simple font change can bring a brand to life. Always explore your options!",
     time: "25 minutes ago",
   },
   {
     img: twitImg,
     handle: "@FreelanceHub",
-    text:
-      "Pro tip: Clear job descriptions attract better freelancers. Be specific and save time.",
+    text: "Pro tip: Clear job descriptions attract better freelancers. Be specific and save time.",
     time: "1 hour ago",
   },
   {
     img: twitImg,
     handle: "@CreativeUpdates",
-    text:
-      "We just launched a new batch of featured contractors! Find top talent for your next project.",
+    text: "We just launched a new batch of featured contractors! Find top talent for your next project.",
     time: "2 hours ago",
   },
   {
     img: twitImg,
     handle: "@ArtStudioLive",
-    text:
-      "Color palette inspiration: Deep blues + soft orange accents. Perfect for modern UI designs.",
+    text: "Color palette inspiration: Deep blues + soft orange accents. Perfect for modern UI designs.",
     time: "3 hours ago",
   },
   {
     img: twitImg,
     handle: "@DailyGraphics",
-    text:
-      "Consistency = trust. Make sure your branding looks the same across all platforms.",
+    text: "Consistency = trust. Make sure your branding looks the same across all platforms.",
     time: "Yesterday",
   },
 ];
-
 
 const TopCarousel = ({
   slides = [banner1, banner2, banner3],
@@ -433,24 +426,41 @@ export default function Home() {
             </h4>
             <TwitsCarousel cards={twitsData} />
           </div>
-          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-    </div>
-    <div class="carousel-item">
-    </div>
-    <div class="carousel-item">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+          <div
+            id="carouselExampleControls"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active"></div>
+              <div class="carousel-item"></div>
+              <div class="carousel-item"></div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleControls"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleControls"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
         </div>
       </section>
     </main>

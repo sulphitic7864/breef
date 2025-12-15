@@ -439,7 +439,7 @@ export default function Home() {
     </div>
     <div class="carousel-item">
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item"> 
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">

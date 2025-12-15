@@ -458,7 +458,7 @@ export default function Home() {
                 class="carousel-control-next-icon"
                 aria-hidden="true"
               ></span>
-              <span class="visually-hidden">Next</span>
+              <span class="visually-hidden">NextB</span>
             </button>
           </div>
         </div>
